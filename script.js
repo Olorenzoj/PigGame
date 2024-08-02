@@ -1,6 +1,5 @@
 'use strict';
 
-let number;
 let player = 1;
 const currentScore1 = document.getElementById('current--0');
 const currentScore2 = document.getElementById('current--1');
@@ -37,11 +36,11 @@ const changePlayer = function (player) {
 }
 
 btnRoll.addEventListener('click', function () {
-    number = Math.floor(Math.random() * 6) + 1;
+    let number = Math.floor(Math.random() * 6) + 1;
     console.log(number);
     dice.classList.remove('hidden');
     dice.animate(diceAnim, timing)
-    dice.setAttribute('src', `dice-${number}.png`)
+    dice.src = `dice-${number}.png`
     if (number !== 1) {
         if (player == 1) {
             score1.animate(numberAnim)
