@@ -9,6 +9,10 @@ const dice = document.querySelector('.dice');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 const btnNew = document.querySelector('.btn--new');
+const btnRules = document.querySelector('.btn--rules');
+const modal = document.querySelector('.modal');
+const overlay =document.querySelector('.overlay');
+const btnClose = document.querySelector('.close-modal');
 
 const diceAnim = [
     { transform: "translate(-50%) rotate(0) scale(2)" },
@@ -34,6 +38,16 @@ const changePlayer = function (player) {
         score2.textContent = 0
     }
 }
+
+const closeModal = function () {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+};
+const openModal = function () {
+    console.log('Button clicked');
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden')
+};
 
 btnRoll.addEventListener('click', function () {
     let number = Math.floor(Math.random() * 6) + 1;
@@ -75,13 +89,28 @@ btnHold.addEventListener('click', function () {
     }
 });
 
-btnNew.addEventListener('click', function(){
+btnNew.addEventListener('click', function () {
     player = 1
     changePlayer(player)
+    dice.classList.add('hidden')
     score2.textContent = 0
     currentScore1.textContent = 0
     currentScore2.textContent = 0
-    
+
+})
+
+btnRules.addEventListener('click', function () {
+    modal.classList.remove('hidden')
+    overlay.classList.remove('hidden')
+})
+
+btnClose.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeModal();
+    };
 })
 
 

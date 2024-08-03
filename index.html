@@ -8,7 +8,26 @@
     <title>Pig Game</title>
   </head>
   <body>
+
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>Rules 🫡</h1>
+      <p>
+        In the Pig game, the goal is to be the first player to reach 100 points.
+        Players take turns rolling a single dice. On their turn, they can roll
+        repeatedly, accumulating points as long as they don't roll a 1. If a
+        player rolls a 1, they lose all the points they haven't banked that turn
+        and their turn ends. After each roll, the player can decide to either
+        roll again or stop and "bank" their points, adding them to their total
+        score. The first player to reach or surpass 100 points wins the game.
+        There are variations where players can agree on a different target score
+        or add additional rules.
+
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
     <main>
+
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
         <p class="score" id="score--0">0</p>
@@ -26,10 +45,12 @@
         </div>
       </section>
 
-      <img src="dice-1.png" alt="Playing dice" class="dice hidden" id="ImgLink"/>
+      <img src="dice-1.png" alt="Playing dice" class="dice hidden"
+        id="ImgLink" />
       <button class="btn btn--new">🔄 New game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
+      <button class="btn btn--rules">📌 Rules</button>
     </main>
     <script src="script.js"></script>
   </body>
