@@ -11,9 +11,9 @@ const btnHold = document.querySelector('.btn--hold');
 const btnNew = document.querySelector('.btn--new');
 const btnRules = document.querySelector('.btn--rules');
 const modal = document.querySelector('.modal');
-const overlay =document.querySelector('.overlay');
+const overlay = document.querySelector('.overlay');
 const btnClose = document.querySelector('.close-modal');
-
+//animations
 const diceAnim = [
     { transform: "translate(-50%) rotate(0) scale(2)" },
     { transform: "translate(-50%) rotate(360deg) scale(1)" },
@@ -27,6 +27,7 @@ const numberAnim = [
     { transform: 'scale(2)' },
     { transform: 'scale(1)' }
 ]
+//Handle changing the players
 const changePlayer = function (player) {
     if (player === 1) {
         document.querySelector('.player--1').classList.remove('player--active')
@@ -38,17 +39,18 @@ const changePlayer = function (player) {
         score2.textContent = 0
     }
 }
-
+//close modal button
 const closeModal = function () {
     modal.classList.add('hidden');
     overlay.classList.add('hidden');
 };
+//to open the modal window
 const openModal = function () {
     console.log('Button clicked');
     modal.classList.remove('hidden');
     overlay.classList.remove('hidden')
 };
-
+//roll the dice
 btnRoll.addEventListener('click', function () {
     let number = Math.floor(Math.random() * 6) + 1;
     console.log(number);
@@ -78,7 +80,7 @@ btnRoll.addEventListener('click', function () {
     }
 
 });
-
+//hold the score
 btnHold.addEventListener('click', function () {
     if (player == 1) {
         player = 2
@@ -88,7 +90,7 @@ btnHold.addEventListener('click', function () {
         changePlayer(player)
     }
 });
-
+//New Game
 btnNew.addEventListener('click', function () {
     player = 1
     changePlayer(player)
@@ -98,18 +100,18 @@ btnNew.addEventListener('click', function () {
     currentScore2.textContent = 0
 
 })
-
+// Handle Modal window of the rule Book
 btnRules.addEventListener('click', function () {
     modal.classList.remove('hidden')
     overlay.classList.remove('hidden')
 })
-
+//Call the open and close modal functions
 btnClose.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
-
-document.addEventListener('keydown', function(event){
+//Close modal if the 'ESC' its pressed
+document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
-            closeModal();
+        closeModal();
     };
 })
 

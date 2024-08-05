@@ -132,20 +132,25 @@ main {
 }
 
 .btn--new {
-  top: 4rem;
+  top: 2rem;
 }
-
-.btn--roll {
-  top: 39.3rem;
-}
-
-.btn--hold {
-  top: 46.1rem;
+.btn--settings{
+  top: 9rem;
 }
 
 .btn--rules {
-  top: 32rem;
+  top: 39.6rem;
 }
+
+.btn--roll {
+  top: 46.3rem;
+}
+
+.btn--hold {
+  top: 53.1rem;
+}
+
+
 
 .btn:active {
   transform: translate(-50%, 3px);
@@ -159,7 +164,7 @@ main {
 .dice {
   position: absolute;
   left: 50%;
-  top: 16.5rem;
+  top: 22rem;
   transform: translateX(-50%);
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
@@ -190,6 +195,7 @@ main {
   width: 70%;
   font-size: 2rem;
   background-color: white;
+  opacity: 3;
   padding: 6rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
@@ -216,4 +222,122 @@ main {
   cursor: pointer;
   border: none;
   background: none;
+}
+
+/* RESPONSIVENESS FOR ALL ELEMENTS */
+@media (max-width: 768px) {
+  main {
+    width: 95%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .player {
+    padding: 5rem;
+  }
+
+  .name, .score, .current-score {
+    font-size: 2.5rem;
+  }
+
+  .current {
+    width: auto;
+    padding: 5%;
+  }
+
+  .btn {
+    font-size: 0;
+    width: 7rem;
+    justify-content: center;
+   align-items: center;
+  }
+
+  .btn::before{
+    font-size: 2rem;
+  }
+
+  .dice {
+    top: 25rem;
+    height: 8rem;
+  }
+
+  .btn--new, .btn--roll, .btn--hold, .btn--rules {
+    position: absolute;
+    transform: none;
+    
+  }
+  .btn--new{
+    top: 0.3rem;
+    left: 22.5rem;
+  }
+  .btn--settings,.btn--roll,.btn--hold, .btn--rules {
+    top: 25rem;
+    margin: 1rem;
+  }
+  .btn--hold{
+    left: 1rem;
+  }
+  .btn--roll{
+    left: 10rem;
+  }
+  .btn--settings{
+    left: 46rem;
+  }
+  .btn--rules{
+    left: 32rem;
+  }
+  .modal{
+    font-size: 1.2rem;
+    width: 90%;
+    padding: 2.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .name, .score, .current-score {
+    font-size: 2rem;
+  }
+
+  .current {
+    width: 50%;
+    padding: 5%;
+  }
+
+  .btn {
+
+    font-size: 0; 
+    width: 10%;
+  }
+
+  .btn::before{
+    font-size: 1rem;
+  }
+.btn--hold, .btn--settings, .btn--roll, .btn--rules{
+  top: 45%;
+}
+.btn--new{
+  left: 45%;
+}
+  .btn--hold{
+    left: 1%;
+  }
+  .btn--roll{
+    left: 11%;
+  }
+  .btn--rules{
+    left: 65%;
+  }
+  .btn--settings{
+    left: 85%;
+  }
+
+  .dice {
+    top: 45%;
+    height: 7rem;
+  }
+  .modal{
+    font-size: 1.2rem;
+    width: 90%;
+    padding: 2.8rem;
+  }
 }
