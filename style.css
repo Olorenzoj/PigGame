@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent; /* Para navegadores basados en WebKit (Safari, Chrome en iOS) */
 }
 
 html {
@@ -134,7 +135,8 @@ main {
 .btn--new {
   top: 2rem;
 }
-.btn--settings{
+
+.btn--settings {
   top: 9rem;
 }
 
@@ -149,8 +151,6 @@ main {
 .btn--hold {
   top: 53.1rem;
 }
-
-
 
 .btn:active {
   transform: translate(-50%, 3px);
@@ -185,7 +185,6 @@ main {
 
 /* -------------------------- */
 /* CLASSES TO MAKE MODAL WORK */
-
 
 .modal {
   position: absolute;
@@ -225,7 +224,7 @@ main {
 }
 
 /* RESPONSIVENESS FOR ALL ELEMENTS */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   main {
     width: 95%;
     height: auto;
@@ -233,111 +232,92 @@ main {
   }
 
   .player {
-    padding: 5rem;
+    padding: 5rem; /* Padding del primer query */
   }
 
-  .name, .score, .current-score {
-    font-size: 2.5rem;
+  .name,
+  .score,
+  .current-score {
+    font-size: 2.5rem; /* Tamaño de fuente del primer query */
   }
 
   .current {
-    width: auto;
-    padding: 5%;
+    width: 48%; /* Ancho ajustado para evitar desbordamiento */
+    padding: 2.5%; /* Padding reducido */
   }
 
   .btn {
     font-size: 0;
-    width: 7rem;
+    width: 11%;  /* Ancho ajustado */
+    height: 8%;   /* Altura para pantallas pequeñas */
+    padding: 10px; 
+    margin-bottom: 5px;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-   align-items: center;
-  }
+    border-radius: 10px;
 
-  .btn::before{
-    font-size: 2rem;
   }
-
+  
+  .btn::before {
+    content: attr(data-emoji);
+    font-size: 2.3rem; /* Tamaño del emoji */
+    margin-right: 5px;
+    display: inline-block;  /* Ensure emoji is displayed inline */
+    vertical-align: middle; /* Align emoji to the middle of the button */
+    margin: 0;    
+  }
+ 
+  .btn:active {
+    transform: translateY(5px); /* Mueve el botón 5px hacia abajo al activarse */
+  }
   .dice {
-    top: 25rem;
-    height: 8rem;
+    top: 45%;  /* Posición del dado */
+    height: 6rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .btn--new, .btn--roll, .btn--hold, .btn--rules {
+  /* Botones con posición absoluta */
+  .btn--new,
+  .btn--roll,
+  .btn--hold,
+  .btn--settings,
+  .btn--rules {
     position: absolute;
     transform: none;
-    
-  }
-  .btn--new{
-    top: 0.3rem;
-    left: 22.5rem;
-  }
-  .btn--settings,.btn--roll,.btn--hold, .btn--rules {
-    top: 25rem;
-    margin: 1rem;
-  }
-  .btn--hold{
-    left: 1rem;
-  }
-  .btn--roll{
-    left: 10rem;
-  }
-  .btn--settings{
-    left: 46rem;
-  }
-  .btn--rules{
-    left: 32rem;
-  }
-  .modal{
-    font-size: 1.2rem;
-    width: 90%;
-    padding: 2.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .name, .score, .current-score {
-    font-size: 2rem;
   }
 
-  .current {
-    width: 50%;
-    padding: 5%;
+  .btn--new {
+    top: 1%; /* Posición del botón "New" */
+    left: 45%;  
   }
 
-  .btn {
-
-    font-size: 0; 
-    width: 10%;
-  }
-
-  .btn::before{
-    font-size: 1rem;
-  }
-.btn--hold, .btn--settings, .btn--roll, .btn--rules{
-  top: 45%;
-}
-.btn--new{
-  left: 45%;
-}
-  .btn--hold{
-    left: 1%;
-  }
-  .btn--roll{
-    left: 11%;
-  }
-  .btn--rules{
-    left: 65%;
-  }
-  .btn--settings{
-    left: 85%;
-  }
-
-  .dice {
+  .btn--hold {
     top: 45%;
-    height: 7rem;
+    left: 5%;
   }
-  .modal{
+
+  .btn--roll {
+    top: 45%;
+    left: 20%;
+  }
+
+  .btn--settings {
+    top: 45%;
+    left:85%; 
+  }
+
+  .btn--rules {
+    top: 45%;
+    left: 70%; 
+  }
+
+
+  .modal {
     font-size: 1.2rem;
     width: 90%;
-    padding: 2.8rem;
+    padding: 5%;
   }
 }
