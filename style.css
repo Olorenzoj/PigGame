@@ -4,7 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  -webkit-tap-highlight-color: transparent; /* Para navegadores basados en WebKit (Safari, Chrome en iOS) */
+  -webkit-tap-highlight-color: transparent;
+  /* Para navegadores basados en WebKit (Safari, Chrome en iOS) */
 }
 
 html {
@@ -232,25 +233,31 @@ main {
   }
 
   .player {
-    padding: 5rem; /* Padding del primer query */
+    padding: 5rem;
+    /* Padding del primer query */
   }
 
   .name,
   .score,
   .current-score {
-    font-size: 2.5rem; /* Tamaño de fuente del primer query */
+    font-size: 2.5rem;
+    /* Tamaño de fuente del primer query */
   }
 
   .current {
-    width: 48%; /* Ancho ajustado para evitar desbordamiento */
-    padding: 2.5%; /* Padding reducido */
+    width: 48%;
+    /* Ancho ajustado para evitar desbordamiento */
+    padding: 2.5%;
+    /* Padding reducido */
   }
 
   .btn {
     font-size: 0;
-    width: 11%;  /* Ancho ajustado */
-    height: 8%;   /* Altura para pantallas pequeñas */
-    padding: 10px; 
+    width: 11%;
+    /* Ancho ajustado */
+    height: 8%;
+    /* Altura para pantallas pequeñas */
+    padding: 10px;
     margin-bottom: 5px;
     display: inline-flex;
     align-items: center;
@@ -258,21 +265,27 @@ main {
     border-radius: 10px;
 
   }
-  
+
   .btn::before {
     content: attr(data-emoji);
-    font-size: 2.3rem; /* Tamaño del emoji */
+    font-size: 2.3rem;
+    /* Tamaño del emoji */
     margin-right: 5px;
-    display: inline-block;  /* Ensure emoji is displayed inline */
-    vertical-align: middle; /* Align emoji to the middle of the button */
-    margin: 0;    
+    display: inline-block;
+    /* Ensure emoji is displayed inline */
+    vertical-align: middle;
+    /* Align emoji to the middle of the button */
+    margin: 0;
   }
- 
+
   .btn:active {
-    transform: translateY(5px); /* Mueve el botón 5px hacia abajo al activarse */
+    transform: translateY(5px);
+    /* Mueve el botón 5px hacia abajo al activarse */
   }
+
   .dice {
-    top: 45%;  /* Posición del dado */
+    top: 45%;
+    /* Posición del dado */
     height: 6rem;
     position: absolute;
     left: 50%;
@@ -290,8 +303,9 @@ main {
   }
 
   .btn--new {
-    top: 1%; /* Posición del botón "New" */
-    left: 45%;  
+    top: 1%;
+    /* Posición del botón "New" */
+    left: 45%;
   }
 
   .btn--hold {
@@ -306,12 +320,12 @@ main {
 
   .btn--settings {
     top: 45%;
-    left:85%; 
+    left: 85%;
   }
 
   .btn--rules {
     top: 45%;
-    left: 70%; 
+    left: 70%;
   }
 
 
