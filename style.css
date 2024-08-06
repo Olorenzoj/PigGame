@@ -187,7 +187,7 @@ main {
 /* -------------------------- */
 /* CLASSES TO MAKE MODAL WORK */
 
-.modal {
+.modal, .modal2 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -329,7 +329,7 @@ main {
   }
 
 
-  .modal {
+  .modal, .modal2 {
     font-size: 1.2rem;
     width: 90%;
     padding: 5%;
