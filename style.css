@@ -187,7 +187,8 @@ main {
 /* -------------------------- */
 /* CLASSES TO MAKE MODAL WORK */
 
-.modal, .modal2 {
+.modal,
+.modal2 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -197,7 +198,7 @@ main {
   background-color: white;
   opacity: 3;
   padding: 6rem;
-  border-radius: 5px;
+  border-radius: 3rem;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
@@ -213,7 +214,8 @@ main {
   z-index: 5;
 }
 
-.close-modal {
+.close-modal,
+.close-modal2 {
   position: absolute;
   top: 1.2rem;
   right: 2rem;
@@ -263,7 +265,6 @@ main {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-
   }
 
   .btn::before {
@@ -328,8 +329,8 @@ main {
     left: 70%;
   }
 
-
-  .modal, .modal2 {
+  .modal,
+  .modal2 {
     font-size: 1.2rem;
     width: 90%;
     padding: 5%;

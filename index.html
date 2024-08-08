@@ -8,7 +8,28 @@
     <title>Pig Game</title>
   </head>
   <body>
+    <div class="modal2 hidden">
+      <button class="close-modal2">&times;</button>
+      <h1>Settings⚙️</h1>
+      <p>Players🙋‍♂️:</p>
+      <input placeholder="Player 1" id="inputP1" value="Player 1" />
+      <input placeholder="Player 2" id="inputP2" value="player 2" />
+      <p>Game to🎯:</p>
+      <label for=""
+        ><input type="radio" name="game" value="30" id="30" />30</label
+      >
+      <label for=""
+        ><input type="radio" name="game" value="50" id="50" />50</label
+      >
+      <label for=""
+        ><input type="radio" name="game" value="80" id="30" />80</label
+      >
+      <label for=""
+        ><input type="radio" name="game" value="100" id="100" />100</label
+      >
 
+      <button>Set Game</button>
+    </div>
     <div class="modal hidden">
       <button class="close-modal">&times;</button>
       <h1>Rules 🫡</h1>
@@ -22,19 +43,11 @@
         score. The first player to reach or surpass 100 points wins the game.
         There are variations where players can agree on a different target score
         or add additional rules.
-
       </p>
     </div>
-    <div class="modal2 hidden">
-      <button class="close-modal">&times;</button>
-      <h1>Settings⚙️</h1>
-      <p>Players:</p>
-      <input placeholder="Player 1" id="inputP1" value="Player 1">
-      <input placeholder="Player 2" id="inputP2" value="player 2">
-    </div>
+
     <div class="overlay hidden"></div>
     <main>
-
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
         <p class="score" id="score--0">0</p>
@@ -52,8 +65,12 @@
         </div>
       </section>
 
-      <img src="dice-1.png" alt="Playing dice" class="dice hidden"
-        id="ImgLink" />
+      <img
+        src="dice-1.png"
+        alt="Playing dice"
+        class="dice hidden"
+        id="ImgLink"
+      />
       <button class="btn btn--new" data-emoji="🔄">🔄 New game</button>
       <button class="btn btn--settings" data-emoji="⚙️">⚙️ Settings</button>
       <button class="btn btn--roll" data-emoji="🎲">🎲 Roll dice</button>
