@@ -216,7 +216,7 @@ main {
 .setGame {
   position: relative;
   background-color: #6b6b6b1e;
-  transition: box-shadow 0.7s cubic-bezier(.25,.8,.25,1); /* Smooth transition for box-shadow */
+  transition: box-shadow 0.7s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition for box-shadow */
 }
 
 .setGame:hover {
@@ -261,7 +261,7 @@ main {
 }
 
 .gameRadio:checked {
-  background-color: hsl(293, 77%, 27%);;
+  background-color: hsl(293, 77%, 27%);
 }
 
 .gameRadio::after {
@@ -293,9 +293,6 @@ label {
 label input {
   margin-right: 5px;
 }
-
-
-
 
 .overlay {
   position: absolute;
