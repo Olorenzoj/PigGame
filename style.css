@@ -104,7 +104,9 @@ main {
 }
 
 /* ABSOLUTE POSITIONED ELEMENTS */
-.btn, .gameTo {
+.btn,
+.gameTo,
+.setGame {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -126,7 +128,7 @@ main {
   border-radius: 50rem;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
-.gameTo{
+.gameTo {
   text-transform: none;
   top: 55%;
 }
@@ -206,6 +208,94 @@ main {
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
+.modal2:not(.hidden) {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.setGame {
+  position: relative;
+  background-color: #6b6b6b1e;
+  transition: box-shadow 0.7s cubic-bezier(.25,.8,.25,1); /* Smooth transition for box-shadow */
+}
+
+.setGame:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+/* ... other styles ... */
+
+/* Style for Text Inputs */
+.playerInput {
+  font-family: 'Nunito', sans-serif;
+  font-size: 80%;
+  color: #444;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 50rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem; /* Add some spacing between inputs */
+  width: calc(100% - 3rem); /* Adjust width to account for padding */
+  transition: all 0.3s;
+}
+
+.playerInput:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+/* Style for the radio buttons */
+.gameRadio {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.gameRadio:checked {
+  background-color: hsl(293, 77%, 27%);;
+}
+
+.gameRadio::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+}
+
+.gameRadio:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Style for the labels associated with radio buttons */
+label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+label input {
+  margin-right: 5px;
+}
+
+
+
 
 .overlay {
   position: absolute;
@@ -306,10 +396,11 @@ main {
     position: absolute;
     transform: none;
   }
-.gameTo{
-  top: 91.5%;
-  transform: 10%;
-}
+  .gameTo {
+    top: 91.5%;
+    transform: 5%;
+    font-size: 140%;
+  }
   .btn--new {
     top: 1%;
     /* Posición del botón "New" */
@@ -338,7 +429,7 @@ main {
 
   .modal,
   .modal2 {
-    font-size: 1.2rem;
+    font-size: 160%;
     width: 90%;
     padding: 5%;
   }

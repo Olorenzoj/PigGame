@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <title>Pig Game</title>
   </head>
   <body>
@@ -12,22 +14,20 @@
       <button class="close-modal2">&times;</button>
       <h1>Settings⚙️</h1>
       <p>Players🙋‍♂️:</p>
-      <input placeholder="Player 1" id="inputP1" class="playerInput1" value="Player 1" />
-      <input placeholder="Player 2" id="inputP2" class="playerInput2" value="player 2" />
+      <input placeholder="Player 1" id="inputP1" class="playerInput"
+        value="Player 1" />
+      <input placeholder="Player 2" id="inputP2" class="playerInput"
+        value="Player 2" />
       <p>Game to🎯:</p>
-      <label for="30"
-        ><input type="radio" name="game" class="gameRadio" value="30" id="30" />30</label
-      >
-      <label for="50"
-        ><input type="radio" name="game" class="gameRadio" value="50" id="50" />50</label
-      >
-      <label for="80"
-        ><input type="radio" name="game" class="gameRadio" value="80" id="80" />80</label
-      >
-      <label for="100"
-        ><input type="radio" name="game" class="gameRadio" value="100" id="100" />100</label
-      >
-      <button id="setGame">Set Game</button>
+      <label for="30"><input type="radio" name="game" class="gameRadio"
+          value="30" id="30" />30</label>
+      <label for="50"><input type="radio" name="game" class="gameRadio"
+          value="50" id="50" />50</label>
+      <label for="80"><input type="radio" name="game" class="gameRadio"
+          value="80" id="80" />80</label>
+      <label for="100"><input type="radio" name="game" class="gameRadio"
+          value="100" id="100" />100</label>
+      <button id="setGame" class="setGame">Set Game</button>
     </div>
     <div class="modal hidden">
       <button class="close-modal">&times;</button>
@@ -68,13 +68,12 @@
         src="dice-1.png"
         alt="Playing dice"
         class="dice hidden"
-        id="ImgLink"
-      />
+        id="ImgLink" />
       <button class="btn btn--new" data-emoji="🔄">🔄 New game</button>
       <button class="btn btn--settings" data-emoji="⚙️">⚙️ Settings</button>
       <button class="btn btn--roll" data-emoji="🎲">🎲 Roll dice</button>
       <button class="btn btn--hold" data-emoji="📥">📥 Hold</button>
-      <p class="gameTo hidden" ></p>
+      <p class="gameTo hidden"></p>
       <button class="btn btn--rules" data-emoji="📙">📙 Rules</button>
     </main>
     <script src="script.js"></script>
