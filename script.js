@@ -16,6 +16,14 @@ const overlay = document.querySelector('.overlay');
 const btnClose = document.querySelector('.close-modal');
 const btnClose2 = document.querySelector('.close-modal2');
 const btnSett = document.querySelector('.btn--settings');
+const radioButtons = document.querySelectorAll('.gameRadio');
+const setGameBtn = document.getElementById('setGame');
+const playerInput1 = document.querySelector('.playerInput1');
+const playerInput2 = document.querySelector('.playerInput2');
+const name1 = document.getElementById('name--0');
+const name2 = document.getElementById('name--1');
+const gameTo = document.querySelector('.gameTo');
+
 //animations
 const diceAnim = [
   { transform: 'translate(-50%) rotate(0) scale(2)' },
@@ -27,6 +35,17 @@ const timing = {
 };
 
 const numberAnim = [{ transform: 'scale(2)' }, { transform: 'scale(1)' }];
+
+//reset scores(newGame, and setting function)
+
+const reset = () => {
+  player = 1;
+  changePlayer(player);
+  dice.classList.add('hidden');
+  score2.textContent = 0;
+  currentScore1.textContent = 0;
+  currentScore2.textContent = 0;
+}
 
 //Handle changing the players
 const changePlayer = function (player) {
@@ -84,12 +103,7 @@ btnHold.addEventListener('click', function () {
 
 //New Game
 btnNew.addEventListener('click', function () {
-  player = 1;
-  changePlayer(player);
-  dice.classList.add('hidden');
-  score2.textContent = 0;
-  currentScore1.textContent = 0;
-  currentScore2.textContent = 0;
+  reset()
 });
 
 //close modal button
@@ -126,3 +140,25 @@ document.addEventListener('keydown', function (event) {
     else if (!modal2.classList.contains('hidden')) closeModal(modal2);
   }
 });
+
+//settings
+setGameBtn.addEventListener('click', () => {
+  let selectedValue = null;
+
+  for (let i = 0; i < radioButtons.length; i++) {
+    if (radioButtons[i].checked) {
+      selectedValue = radioButtons[i].value;
+      break; // Exit the loop once   
+    }
+  };
+  name1.textContent = playerInput1.value;
+  name2.textContent = playerInput2.value;
+
+  if (!modal.classList.contains('hidden')) closeModal(modal);
+  else if (!modal2.classList.contains('hidden')) closeModal(modal2);
+
+  gameTo.textContent ='Game to🎯: ' + selectedValue
+  gameTo.classList.remove('hidden')
+  reset()
+
+})

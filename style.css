@@ -104,7 +104,7 @@ main {
 }
 
 /* ABSOLUTE POSITIONED ELEMENTS */
-.btn {
+.btn, .gameTo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -116,7 +116,7 @@ main {
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 400;
-  transition: all 0.2s;
+  transition: all 0.7s;
 
   background-color: white;
   background-color: rgba(255, 255, 255, 0.6);
@@ -126,6 +126,10 @@ main {
   border-radius: 50rem;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
+.gameTo{
+  text-transform: none;
+  top: 55%;
+}
 
 .btn::first-letter {
   font-size: 2.4rem;
@@ -134,23 +138,23 @@ main {
 }
 
 .btn--new {
-  top: 2rem;
+  top: 5%;
 }
 
 .btn--settings {
-  top: 9rem;
+  top: 15%;
 }
 
 .btn--rules {
-  top: 39.6rem;
+  top: 65%;
 }
 
 .btn--roll {
-  top: 46.3rem;
+  top: 75%;
 }
 
 .btn--hold {
-  top: 53.1rem;
+  top: 85%;
 }
 
 .btn:active {
@@ -165,7 +169,7 @@ main {
 .dice {
   position: absolute;
   left: 50%;
-  top: 22rem;
+  top: 30%;
   transform: translateX(-50%);
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
@@ -219,7 +223,7 @@ main {
   position: absolute;
   top: 1.2rem;
   right: 2rem;
-  font-size: 5rem;
+  font-size: 3.5rem;
   color: #333;
   cursor: pointer;
   border: none;
@@ -302,7 +306,10 @@ main {
     position: absolute;
     transform: none;
   }
-
+.gameTo{
+  top: 91.5%;
+  transform: 10%;
+}
   .btn--new {
     top: 1%;
     /* Posición del botón "New" */
